@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+if __name__ == "__main__":
+    import sys
+    if sys.argv:
+        print("{} arguments:".format(len(sys.argv)))
+        count = 0
+        for _ in sys.argv:
+            print("{}: {}".format(count, _))
+            count++
+
+    else:
+        print("0 arguments.")
