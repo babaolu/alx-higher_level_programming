@@ -16,7 +16,12 @@ int is_palindrome(listint_t **head)
 		return (1);
 	addlist = check_cycle(*head, &len);
 	if (!addlist)
-		return (-1);
+	{
+		if (len == 1)
+			return (1);
+		return (0);
+	}
+
 	for (iter = 0; iter < (len / 2); iter++)
 	{
 		if (addlist[iter]->n != addlist[len - iter - 1]->n)
@@ -42,6 +47,11 @@ void *check_cycle(listint_t *list, size_t *length)
 	size_t len = 1024, iter = 0;
 	listint_t **arr, *next;
 
+	if (!list->next)
+	{
+		*length = 1;
+		return (NULL);
+	}
 	arr = malloc(sizeof(*arr) * len);
 	if (!arr)
 		return (NULL);
