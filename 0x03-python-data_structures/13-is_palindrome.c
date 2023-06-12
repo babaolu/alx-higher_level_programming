@@ -44,7 +44,7 @@ void *check_cycle(listint_t *list, size_t *length)
 
 	arr = malloc(sizeof(*arr) * len);
 	if (!arr)
-		return (-1);
+		return (NULL);
 	next = list;
 	while (next)
 	{
@@ -53,7 +53,7 @@ void *check_cycle(listint_t *list, size_t *length)
 			len *= 2;
 			arr = realloc(arr, len);
 			if (!arr)
-				return (-1);
+				return (NULL);
 		}
 		if (find_list(arr, next, iter))
 		{
