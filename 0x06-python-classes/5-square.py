@@ -32,3 +32,5 @@ class Square:
         """ Print square with # character """
         for sz in range(self.size):
             print("{}".format('#'*self.size))
+        if self.size == 0:
+            print("")
