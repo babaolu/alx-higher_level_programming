@@ -38,4 +38,5 @@ class Rectangle:
 
     def __str__(self):
         if self.width < 1 or self.height < 1:
+            return ""
         return (self.height-1) * (self.width * "#" + '\n') + self.width * "#"
