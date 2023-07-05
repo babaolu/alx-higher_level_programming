@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module implements a Rectangle class
+"""
+
+
 class Rectangle:
     number_of_instances = 0
 

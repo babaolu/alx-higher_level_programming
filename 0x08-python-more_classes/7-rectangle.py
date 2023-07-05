@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module implements a Rectangle class
+"""
+
+
 class Rectangle:
     number_of_instances = 0
     print_symbol = '#'
@@ -44,7 +49,7 @@ class Rectangle:
         if self.width < 1 or self.height < 1:
             return ""
         return ((self.height-1) * (self.width * type(self).print_symbol + '\n')
-                    + self.width * type(self).print_symbol)
+                + self.width * type(self).print_symbol)
 
     def __repr__(self):
         return "Rectangle({},{})".format(self.width, self.height)
