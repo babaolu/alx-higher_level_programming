@@ -28,7 +28,12 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
->>> add_integer('56', '7')
+>>> add_integer(None, '7')
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
+
+>>> add_integer(3e1000000)
+Traceback (most recent call last):
+...
+ValueError: value is too large
