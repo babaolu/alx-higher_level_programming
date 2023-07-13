@@ -29,6 +29,11 @@ Traceback (most recent call last):
 ...
 ZeroDivisionError: division by zero
 
+>>> matrix_divided(matrix, 'y')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
 >>> matrix[1] = [2, 5]
 
 >>> matrix_divided(matrix, 5)
@@ -49,3 +54,12 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[2, 7, 8, 5]])
+[[2.0, 7.0, 8.0, 5.0]]
+
+>>> matrix_divided()
+[[]]
+
+>>> matrix_divided([[2, 7, 8, 5]], float('inf'))
+[[0.0, 0.0, 0.0, 0.0]]

@@ -4,7 +4,7 @@ Module describing a function that performs elemental division
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=[[]], div=1):
     """ Divides elementally by div """
     if not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of \
