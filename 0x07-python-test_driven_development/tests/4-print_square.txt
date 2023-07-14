@@ -1,0 +1,26 @@
+This is the test file for ``4-print_square`` module
+===================================================
+
+>>> import importlib
+
+>>> my_mod = importlib.import_module('4-print_square')
+
+>>> print_square = my_mod.print_square
+
+Now to start testing:
+
+>>> print_square(2)
+##
+##
+
+>>> print_square(3.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(-3)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+>>> print_square()
