@@ -4,7 +4,7 @@ This module implements a function that indents texts
 """
 
 
-def text_indentation(text=''):
+def text_indentation(text=""):
     """ Add 2 newlines after . ? and : """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
