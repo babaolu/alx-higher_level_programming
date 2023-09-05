@@ -1,0 +1,65 @@
+This is the test file for ``2-matrix_divided`` module
+=====================================================
+
+>>> import importlib
+
+>>> my_mod = importlib.import_module('2-matrix_divided')
+
+>>> matrix_divided = my_mod.matrix_divided
+
+Now to start testing:
+
+>>> matrix = None
+
+>>> matrix_divided(matrix, 5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix = [
+... [4, 6, 8],
+... [12, 7, 8]
+... ]
+
+>>> matrix_divided(matrix, 5)
+[[0.8, 1.2, 1.6], [2.4, 1.4, 1.6]]
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+>>> matrix_divided(matrix, 'y')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix[1] = [2, 5]
+
+>>> matrix_divided(matrix, 5)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix[1] = [5, 7, 't']
+
+>>> matrix_divided(matrix, 8)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix[1] = 45
+
+>>> matrix_divided(matrix, 9)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[2, 7, 8, 5]])
+[[2.0, 7.0, 8.0, 5.0]]
+
+>>> matrix_divided()
+[[]]
+
+>>> matrix_divided([[2, 7, 8, 5]], float('inf'))
+[[0.0, 0.0, 0.0, 0.0]]

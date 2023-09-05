@@ -1,0 +1,25 @@
+This is the test file for ``5-text_indentation`` module
+=======================================================
+
+>>> import importlib
+
+>>> my_mod = importlib.import_module('5-text_indentation')
+
+>>> text_indentation = my_mod.text_indentation
+
+Now to start testing:
+
+>>> text_indentation()
+
+>>> text_indentation(57)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("Name: Olabode")
+Name:
+<BLANKLINE>
+Olabode
+
+>>> text_indentation("Hello")
+Hello
