@@ -1,0 +1,21 @@
+This is the test file for ``1-my_list`` module
+==============================================
+
+>>> import importlib
+
+>>> my_mod = importlib.import_module('1-my_list')
+
+>>> p = my_mod.MyList()
+
+>>> p.print_sorted()
+[]
+
+>>> p.append(4)
+
+>>> p.print_sorted()
+[4]
+
+>>> p.extend([4, 6, 8, 8, 1])
+
+>>> p.print_sorted()
+[1, 4, 4, 6, 8, 8]

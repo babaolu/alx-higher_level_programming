@@ -24,8 +24,6 @@ def matrix_mul(m_a, m_b):
         for val in row:
             if not isinstance(val, (int, float)):
                 raise TypeError(mint.format(mat="m_a"))
-    if len(m_a[0]) != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
 
     for row in m_b:
         if not isinstance(row, list):
@@ -40,6 +38,8 @@ def matrix_mul(m_a, m_b):
         raise ValueError(mempty.format(mat="m_a"))
     if len(m_b) == 0 or len(m_b[0]) == 0:
         raise ValueError(mempty.format(mat="m_b"))
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
     new_mat = []
     for i in range(len(m_a)):
         new_mat.append([])
