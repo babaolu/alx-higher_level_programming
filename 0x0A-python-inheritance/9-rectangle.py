@@ -4,9 +4,8 @@ This implements Rectangle class
 """
 
 
-# import importlib
-# BaseGeometry = importlib.import_module('7-base_geometry').BaseGeometry
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+import importlib
+BaseGeometry = importlib.import_module('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
