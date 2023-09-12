@@ -5,10 +5,10 @@ This module implements Rectangle class
 
 
 import importlib
-mymod = importlib.import_module('7-base_geometry')
+BaseGeometry = importlib.import_module('7-base_geometry').BaseGeometry
 
 
-class Rectangle(mymod.BaseGeometry):
+class Rectangle(BaseGeometry):
     """ Class Rectangle """
     def __init__(self, width, height):
         self.integer_validator("width", width)
