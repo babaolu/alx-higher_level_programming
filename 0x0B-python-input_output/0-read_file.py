@@ -4,5 +4,7 @@
 
 def read_file(filename=""):
     """ Reads from file and prints to standard output """
-    with open(filename) as f:
-        print(f.read())
+    if not isinstance(filename, str):
+        raise TypeError("filename is not a string")
+    with open(filename, encoding="utf-8") as f:
+        print(f.read(), end='')
