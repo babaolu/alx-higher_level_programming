@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module implements Rectangle class
+This implements Rectangle class
 """
 
 
