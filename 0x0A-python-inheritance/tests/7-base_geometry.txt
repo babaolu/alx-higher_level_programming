@@ -1,0 +1,21 @@
+This is the test file for ``7-base_geometry`` module
+====================================================
+
+>>> import importlib
+
+>>> my_mod = importlib.import_module('7-base_geometry')
+
+>>> bg = my_mod.BaseGeometry()
+
+>>> bg.integer_validator("Temp", 34)
+
+>>> bg.integer_validator("Volume", '5')
+Traceback (most recent call last):
+...
+TypeError: <Volume> must be an integer
+
+>>> bg.integer_validator("Battery", 0)
+Traceback (most recent call last):
+...
+ValueError: <Battery> must be greater than 0
+
