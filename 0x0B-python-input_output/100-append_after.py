@@ -4,6 +4,8 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ Inserts line of text after a line containing a string """
+    if not (search_string and new_string):
+        return
     with open(filename, mode="r+", encoding="utf-8") as f:
         line_list = f.readlines()
         for i in range(len(line_list)):
