@@ -62,6 +62,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= zero")
         self.__y = y
 
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns new instance of Rectangle """
+        if dictionary:
+            my_rect = cls(1, 1)
+            my_rect.update(**dictionary)
+            return my_rect
+
     def area(self):
         """ Returns the area of this Rectangle """
         return self.width * self.height

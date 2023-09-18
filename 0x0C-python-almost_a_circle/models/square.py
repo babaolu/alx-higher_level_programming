@@ -19,6 +19,14 @@ class Square(Rectangle):
         self.width = size
         self.height = size
 
+    @classmethod
+    def create(cls, **dictionary):
+        """ Returns new instance of Square """
+        if dictionary:
+            my_sq = cls(1)
+            my_sq.update(**dictionary)
+            return my_sq
+
     def __str__(self):
         """ Return informal string representation of Square object """
         return "[Square] ({}) {}/{} - {}".format(
