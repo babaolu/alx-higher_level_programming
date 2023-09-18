@@ -7,6 +7,7 @@ class Rectangle(Base):
     """ Rectangle class """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ Initialization function """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -63,7 +64,7 @@ class Rectangle(Base):
 
     def area(self):
         """ Returns the area of this Rectangle """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """ Prints # representation of rectangle """
@@ -73,5 +74,37 @@ class Rectangle(Base):
               + " " * self.x + self.width * "#")
 
     def __str__(self):
+        """ Return informal string description of Rectangle object """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ Updates the attributes of a rectangle """
+        if args is None or not args:
+            if kwargs:
+                for key, value in kwargs.items():
+                    if key == "id":
+                        self.id = value
+                    elif key == "width":
+                        self.width = value
+                    elif key == "height":
+                        self.height = value
+                    elif key == "x":
+                        self.x = value
+                    elif key == "y":
+                        self.y = value
+            return
+        if len(args) > 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        elif len(args) == 4:
+            self.id, self.width, self.height, self.x = args
+        elif len(args) == 3:
+            self.id, self.width, self.height = args
+        elif len(args) == 2:
+            self.id, self.width = args
+        else:
+            [self.id] = args
