@@ -10,6 +10,8 @@ class Base:
     def __init__(self, id=None):
         """ Instantiation function """
         if id is not None:
+            if not isinstance(id, int):
+                raise TypeErro("id must be and integer")
             self.id = id
         else:
             Base.__nb_objects += 1
