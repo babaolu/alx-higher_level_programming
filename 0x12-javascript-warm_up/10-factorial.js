@@ -1,9 +1,9 @@
 #!/usr/bin/node
 const count = parseInt(process.argv[2], 10);
-let result = 1;
-if (count) {
-  for (let i = 1; i <= count; i++) {
-    result *= i;
+function factorial (a) {
+  if (!a || a < 0) {
+    return 1;
   }
+  return a * factorial(a - 1);
 }
-console.log(result);
+console.log(factorial(count));
