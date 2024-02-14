@@ -16,10 +16,10 @@ class Rectangle {
   }
 
   rotate () {
-    if (!(this.width && this.height)) {
+    if (!(this.width && this.height) || this.width === this.height) {
       return;
     }
-    let mid = this.width;
+    const mid = this.width;
     this.width = this.height;
     this.height = mid;
   }
