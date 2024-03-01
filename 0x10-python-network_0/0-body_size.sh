@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Displays size of http response to a request
-curl -sI "$1" | grep Content-Length | tr -cd "[:digit:]"
-echo
-exit
+curl -sI "$1" | grep Content-Length | tr -cd "[:digit:]\n"
