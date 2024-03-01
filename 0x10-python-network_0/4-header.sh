@@ -1,3 +1,3 @@
 #!/bin/bash
 # Displays size of http response to a request
-curl -s -X OPTIONS "$1" | grep Allow | cut -d " " -f2-
+curl -s -H "X-School-User-Id: 98" "$1"
