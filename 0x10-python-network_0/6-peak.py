@@ -3,6 +3,7 @@
 
 
 def find_peak(list_of_integers):
+    """ Finding the peak inside a list """
     if not list_of_integers:
         return
     myl = list_of_integers
