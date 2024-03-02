@@ -4,7 +4,8 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    res = requests.get(sys.argv[1], auth=(sys.argv[2]))
+    res = requests.get('https://api.github.com/user', 
+                       auth=(sys.argv[1], sys.argv[2]))
     try:
         val = res.json()
         if val:
