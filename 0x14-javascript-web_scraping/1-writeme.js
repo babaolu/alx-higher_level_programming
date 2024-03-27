@@ -6,7 +6,7 @@ const data = process.argv[3] + '\n';
 
 const filePath = process.argv[2];
 
-fs.writeFile(filePath, data, (err) => {
+fs.writeFile(filePath, data, 'utf-8', (err) => {
   if (err) {
     console.error(err);
   }
