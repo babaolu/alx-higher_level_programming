@@ -14,8 +14,8 @@ request('https://swapi-api.alx-tools.com/api/films/', (error, response, body) =>
   }
 
   const info = JSON.parse(body);
-  for (let j = 0; j < info.results[num].characters.length; j++) {
-    request(info.results[num].characters[j], (cerror, cres, cbody) => {
+  for (let j = 0; j < info.results[num - 1].characters.length; j++) {
+    request(info.results[num - 1].characters[j], (cerror, cres, cbody) => {
       if (cerror) {
         console.error('CError:', cerror);
         return;
