@@ -1,9 +1,11 @@
 #!/usr/bin/node
 
 const request = require('request');
+const fs = require('fs');
 
-const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
-request(url, (error, response, body) => {
+const filePath = process.argv[3];
+
+request(process.argv[2], function (error, response, body) {
   if (error) {
     console.error('Error:', error);
     return;
@@ -13,6 +15,9 @@ request(url, (error, response, body) => {
     return;
   }
 
-  const info = JSON.parse(body);
-  console.log(info.title);
+  fs.writeFile(filePath, body, (err) => {
+    if (err) {
+      console.error(err);
+    }
+  });
 });
